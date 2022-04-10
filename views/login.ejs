@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/loginstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="/images/favicon.jpg">
+    <!-- Font Awesome -->
+      <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <title>Quorum - A forum to clear your doubts</title>
+  </head>
+  <body class="bg">
+    <div class="container-fluid">
+      <div class="card sp" id="blur">
+          <h1 class="heading">Quorum</h1>
+          <p class="sub-heading">A place to clear your doubts and expand your contacts</p>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="oauth-packet oauth-button">
+                <div>
+                  <a href="/auth/google"><button class="btn btn-light oauth-btn"><i class="fab fa-google"></i>   Continue With Google</button></a>
+                </div>
+
+              </div>
+              <p class="terms">By continuing you indicate that you agree to Quorum’s Terms of Service and Privacy Policy.</p>
+            </div>
+            <div class="col-lg-6 login-sp">
+              <div class="login-ele">
+                <p class="login-ele-title">Login</p>
+              </div>
+              <form action="/login" method="post" class="form-left">
+                <div class="form-group form-sp">
+                  <label >Email</label>
+                  <input class="form-control" type="email" name="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                  <label >Password</label>
+                  <input class="form-control" type="password" name="password" placeholder="Your Password" required>
+                </div>
+                <div class="btn-space">
+                  <button class="btn btn-primary login-btn" type="submit">Login</button>
+                </div>
+                <div class="btn-space">
+                  <div class="donot-terms">Do not have an account?</div> <a href="/register"><label for="show">Register</label></a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="footer">
+              <p>Copyright (c) 2022 Krishna Raj All Rights Reserved.</p>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </body>
+
+</html>

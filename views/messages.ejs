@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs"); %>
+
+<section id="chat">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="menu-req-msg">
+          <div class="menu-title">
+            <p>CONNECT</p>
+          </div>
+          <div class="menu-content">
+            <div class="friend-request">
+              <p onclick="acceptRequest('<%- User._id %>')"><i class="fas fa-user-plus"></i> Requests</p>
+            </div>
+            <div class="view-friends-list">
+              <p onclick="viewUserFriends('<%- User._id %>')"><i class="fas fa-user"></i> Friends</p>
+            </div>
+            <div class="see-messages">
+              <p onclick="viewChats('<%- User._id %>')"><i class="fas fa-envelope"></i> Inbox</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-lg-8">
+        <div class="messaging-space">
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+</section>
+<%- include("partials/footer.ejs"); %>

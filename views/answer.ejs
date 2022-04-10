@@ -1,0 +1,124 @@
+<%- include("partials/header.ejs"); %>
+
+<section id="answer">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="container ">
+          <div class="Q-left-header"><div class="q">Questions</div></div>
+          <div class="Q-left-add-q">
+            <div class="aq"><a onclick="showAllQ()">All Questions</a></div>
+          </div>
+          <div class="Q-left-ans-ltr">
+            <div class="al"><a onclick="showDrafts('<%= User._id%>')">Answer Later</a></div>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-lg-6 display-question">
+        <div class="q-title-div">
+          <div class="q-title">All Questions</div>
+        </div>
+        <% for(var i=0;i<question.length;i++){ %>
+          <div class="container each-question" id="<%=question[i]._id %>">
+            <i class="fas fa-times close-icon" onclick="document.getElementById('<%=question[i]._id %>').style.display = 'none' "></i>
+
+            <div class="q-user-img">
+                <% if(question[i].user_dp){ %>
+                  <a href="/profile/<%= question[i].user_id %>"><img class="" src="<%- question[i].user_dp %>" alt="user-img"></a>
+                <% }else{ %>
+                  <img class="" src="/images/anonymous.png" alt="user-img">
+                <% }; %>
+            </div>
+
+            <div class="q-user-details">
+                <p class="q-user-align-name"><%= question[i].user_name %> </p>
+            </div>
+
+            <p class="user-date"> <%= question[i].date.toLocaleDateString("en-US",{year:'numeric',month:'long',day:'numeric'}); %></p>
+
+            <a href="/answers/<%-question[i]._id%>"><p class="questions"><%= question[i].question %></p></a>
+
+            <button class="btn btn-sm " onclick="showInputDiv('<%= question[i]._id%>')"><i class="far fa-edit"></i> Answer</button>
+
+
+            <div class="number-of-likes">
+              <% if(question[i].upvotes.length >0){ %>
+              <%= question[i].upvotes.length %>
+              <% } %>
+            </div>
+
+            <div class="likes">
+              <% if(question[i].upvotes.includes(User._id)){ %>
+              <a onclick="addLikes('<%= question[i]._id %>','<%= User._id %>')" style="color:green" ><i class="fas fa-thumbs-up like-icon"></i></a>
+              <% }else{ %>
+              <a onclick="addLikes('<%= question[i]._id %>','<%= User._id %>')" ><i class="fas fa-thumbs-up like-icon"></i></a>
+              <% } %>
+            </div>
+
+            <div class="number-of-dislikes">
+              <% if(question[i].downvotes.length >0){ %>
+              <%= question[i].downvotes.length %>
+              <% } %>
+            </div>
+
+            <div class="dislikes">
+              <% if(question[i].downvotes.includes(User._id)){ %>
+              <a onclick="addDislikes('<%= question[i]._id %>','<%= User._id %>')" style="color:red" ><i class="fas fa-thumbs-down dislike-icon"></i></a>
+              <% }else{ %>
+              <a onclick="addDislikes('<%= question[i]._id %>','<%= User._id %>')" ><i class="fas fa-thumbs-down dislike-icon"></i></a>
+              <% } %>
+            </div>
+
+            <div class="dropdown">
+                <p  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></p>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" onclick="answerAnonymous('<%= question[i]._id %>','<%= User._id %>')">Answer Anonymously</a>
+                  <a class="dropdown-item drafts" onclick="answerLater('<%= question[i]._id %>','<%= User._id %>')">Answer Later</a>
+                </div>
+            </div>
+
+            <div class="inputAnswer">
+              <div class="border disp-pic-ans">
+                <div class="dis-pic-ua">
+                  <% if(User.userphoto){ %>
+                    <img class="" src="<%- User.userphoto %>" alt="user-img">
+                    <% }else{ %>
+                      <i class="fas fa-user-circle"></i>
+                    <% } %>
+                </div>
+                <div class='wrap'><%- User.name%></div>
+              </div>
+              <form action="/addAnswer/<%= question[i]._id%>" method='post' enctype="multipart/form-data">
+                <div class="border select-icon">
+                  <div class="the-icons">
+                    <button type="button" class="btn bolder" onclick="clickedBold('<%= question[i]._id %>')"><strong">B</strong></button>
+                    <button type="button" class="btn italic" onclick="clickedItalic('<%= question[i]._id %>')"><em>I</em></button>
+                    <button type="button" class="btn underline" onclick="clickedUnderline('<%= question[i]._id %>')"><u>U</u></button>
+                    <input type="file" name="ans_img" accept="image/*" hidden/>
+                    <button type="button" class="btn movie-img" onclick="document.getElementById('<%= question[i]._id %>').querySelector('.select-icon').querySelector('input').click();"><i class="fas fa-images"></i></button>
+                  </div>
+                </div>
+                <div class="border editor" contenteditable='true' ></div>
+                <div class="border submit-op">
+                  <button name="answer" class="btn btn-primary" type="submit"  onclick="getvalue('<%= question[i]._id %>')">Post</button>
+                </div>
+              </form>
+            </div>
+
+
+          </div>
+        <% }; %>
+
+      </div>
+      <div class="col-lg-3">
+
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+<script src="/js/answerpage.js" charset="utf-8"></script>
+<%- include("partials/footer.ejs"); %>

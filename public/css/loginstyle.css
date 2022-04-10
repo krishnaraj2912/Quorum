@@ -1,0 +1,294 @@
+body, html {
+  height: 100%;
+}
+
+
+.bg{
+  height: 90%;
+  background-position: center;
+  background-image: url("/images/login-bg-img.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.sp{
+  background-color: white;
+  margin-top: 2%;
+  margin-left: 22%;
+  margin-right: 22%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.heading{
+  padding-top: 4%;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 500%;
+  color:  #B92B27;
+}
+.sub-heading{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 125%;
+  font-weight: 700;
+}
+
+.row{
+  margin-top:5%;
+}
+
+.login-sp{
+  border-left: 1px solid #dee0e1;
+  padding-right: 7%;
+  padding-left: 5%;
+}
+
+.register-sp{
+  padding-right: 7%;
+  padding-left: 5%;
+}
+.form-sp{
+  padding-top: 10%;
+}
+.login-ele{
+  text-align: left;
+  border-bottom: 1px solid #dee0e1;;
+}
+
+.login-ele-title{
+  font-weight: 700;
+  font-size: 125%;
+}
+
+.login-btn{
+  border-radius: 20px;
+  width:23%;
+}
+
+.btn-space{
+  padding-bottom: 5%;
+}
+
+.form-left{
+  text-align: left;
+}
+
+.oauth-btn{
+  font-family: "Montserrat",sans-serif;
+  font-weight: bold;
+  width:75%;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  text-align: left;
+  background-color: white;
+  border: 1px solid #dee0e1;
+}
+
+.oauth-btn:hover{
+  background-color: #bdc7c9;
+}
+
+.oauth-button{
+  padding-top: 3%;
+  padding-bottom: 5%;
+}
+
+.oauth-packet{
+  border-bottom: 1px solid #dee0e1;
+  margin-left:5%;
+}
+
+.terms{
+  margin-left: 5%;
+  font-family: "Montserrat",sans-serif;
+  font-size: 500;
+  padding-top: 2%;
+}
+
+.terms-reg{
+  font-family: "Montserrat",sans-serif;
+  font-size: 500;
+}
+
+.card-footer{
+  padding-top: 3%;
+}
+.footer{
+  padding-top:2%;
+  padding-bottom: 1%;
+  background-color: #f1f2f2;
+}
+
+/*Register form*/
+
+.reg-container{
+  padding-top: 5%;
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  bottom: 80%;
+  right:100%;
+  transform: translate(50%,50%);
+  z-index: 1;
+  width: 105%;
+  border: 1px solid #dee0e1;
+  border-radius: 2%;
+}
+
+#show:checked ~ .reg-container{
+  display: block;
+}
+
+input[type="checkbox"]{
+  display: none;
+}
+
+.close-btn{
+  position: absolute;
+  left: 95%;
+  top: 1%;
+}
+
+.close-btn:hover{
+  color: red;
+}
+
+.reg-row{
+  padding-top: 5%;
+}
+
+@media(max-width:1028px){
+
+  .bg{
+    object-fit: cover;
+    overflow: auto;
+  }
+
+  .sp{
+    margin-top: 30%;
+    width:80%;
+    margin-left: 10%;
+  }
+
+  .heading{
+    font-size: 600%;
+  }
+  .sub-heading{
+    font-size: 220%;
+  }
+  label{
+    font-size: 200%;
+  }
+  .form-control{
+    height: 55px;
+    font-size: 200%;
+  }
+
+  .login-ele-title{
+    font-weight: 700;
+    font-size: 230%;
+  }
+
+  .login-btn{
+    height:50px;
+    font-size: 200%;
+  }
+
+  .btn-space{
+    padding-bottom: 5%;
+  }
+
+  .donot-terms{
+    font-size: 200%;
+    display: inline-block;
+  }
+
+  .form-left{
+    margin-top: 5px;
+    text-align: left;
+  }
+
+  .oauth-btn{
+    font-family: "Montserrat",sans-serif;
+    font-weight: bold;
+    width:75%;
+    font-size: 200%;
+  }
+
+  .oauth-btn:hover{
+    background-color: #bdc7c9;
+  }
+
+  .oauth-button{
+    padding-top: 3%;
+    padding-bottom: 5%;
+  }
+
+  .oauth-packet{
+    border-bottom: 1px solid #dee0e1;
+    margin-left:5%;
+  }
+
+  .terms{
+    margin-left: 5%;
+    font-family: "Montserrat",sans-serif;
+    font-size: 200%;
+    padding-top: 5%;
+  }
+
+  .terms-reg{
+    font-family: "Montserrat",sans-serif;
+    font-size: 200%;
+  }
+
+  .card-footer{
+    padding-top: 3%;
+  }
+  .footer{
+    padding-top:2%;
+    padding-bottom: 1%;
+    background-color: #f1f2f2;
+    font-size: 200%;
+  }
+
+  /*Register form*/
+
+  .reg-container{
+    padding-top: 5%;
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    bottom: 80%;
+    right:100%;
+    transform: translate(50%,50%);
+    z-index: 1;
+    width: 105%;
+    border: 1px solid #dee0e1;
+    border-radius: 2%;
+  }
+
+  #show:checked ~ .reg-container{
+    display: block;
+  }
+
+  input[type="checkbox"]{
+    display: none;
+  }
+
+  .close-btn{
+    position: absolute;
+    left: 95%;
+    top: 1%;
+  }
+
+  .close-btn:hover{
+    color: red;
+  }
+
+  .reg-row{
+    padding-top: 5%;
+  }
+
+}

@@ -1,0 +1,192 @@
+<%- include("partials/header.ejs"); %>
+
+<section id="answer-display">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3">
+
+      </div>
+      <div class="col-lg-6 show-q-a" id="<%= Question[0]._id %>">
+        <div class="show-question ">
+          <div class="disp-q">
+            <p> <%= Question[0].question %></p>
+          </div>
+          <div class="dropdown">
+              <p  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></p>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <% if(Question[0].user_name != "Anonymous"){ %>
+                <% if(Question[0].user_id.toString() == User._id.toString()){ %>
+                <a class="dropdown-item" onclick="deleteMainQ('<%= Question[0]._id%>')">Delete</a>
+                <%}} %>
+                <a class="dropdown-item" onclick="AnonymousDiv('<%= Question[0]._id%>')">Answer Anonymously</a>
+              </div>
+          </div>
+        </div>
+
+          <% let f=0; %>
+          <% for(let i=0;i<Answer.length;i++){ %>
+          <%  if(Answer[i].user_id == User._id){ %>
+          <%  f=1  }}%>
+          <% if(f == 0){ %>
+            <div class="show-particular">
+              <% if(User.userphoto){ %>
+                <img src="<%- User.userphoto %>" alt="user-img" />
+              <% }else{ %>
+                <img class="" src="/images/anonymous.png" alt="user-img">
+              <% } %>
+              <div class="align-centre">
+                <p><%- User.name %>, can you answer the question? </p>
+              </div>
+              <button class="btn btn-sm small-adj " onclick="showInputDiv('<%= Question[0]._id%>')"><i class="far fa-edit"></i> Answer</button>
+
+              <div id="<%=Question[0]._id %>">
+                <div class="inputAnswer" id="<%=Question[0]._id %>">
+                  <div class="border disp-pic-ans">
+                    <% if(User.userphoto){ %>
+                      <img class="" src="<%- User.userphoto %>" alt="user-img">
+                    <% }else{ %>
+                      <i class="fas fa-user-circle"></i>
+                    <% } %>
+                    <p class='wrap'><%- User.name%></p>
+                  </div>
+                  <form action="/addAnswer/<%= Question[0]._id%>" method='post' enctype="multipart/form-data">
+                    <div class="border select-icon">
+                      <div class="the-icons">
+                        <button type="button" class="btn bolder" onclick="clickedBold('<%= Question[0]._id %>')"><strong">B</strong></button>
+                        <button type="button" class="btn italic" onclick="clickedItalic('<%= Question[0]._id %>')"><em>I</em></button>
+                        <button type="button" class="btn underline" onclick="clickedUnderline('<%= Question[0]._id %>')"><u>U</u></button>
+                        <input type="file" name="ans_img" accept="image/*" hidden/>
+                        <button type="button" class="btn movie-img" onclick="document.getElementById('<%= Question[0]._id %>').querySelector('.select-icon').querySelector('input').click();"><i class="fas fa-images"></i></button>
+                      </div>
+                    </div>
+                    <div class="border editor" contenteditable='true' ></div>
+                    <div class="border submit-op">
+                      <button name="answer" class="btn btn-primary" type="submit"  onclick="getvalue('<%= Question[0]._id %>')">Post</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <% } %>
+
+          <% if(Answer.length>0){ %>
+          <div class="no-of-ans">
+            <% if(Answer.length > 0){ %>
+            <p><%- Answer.length %> Answers</p>
+            <% }else{ %>
+            <p>No Answers</p>
+            <% } %>
+          </div>
+
+          <% if(Answer.length){ %>
+          <% for(var i=0;i<Answer.length;i++){ %>
+            <div class="disp-user-ans" id="<%= Answer[i]._id %>">
+              <div class="show-user-img">
+              <% if(Answer[i].user_dp){ %>
+                <img class="" src="<%= Answer[i].user_dp %> " alt="user-img" >
+              <% }else{ %>
+                <img class="" src="/images/anonymous.png" alt="user-img">
+              <% } %>
+              </div>
+
+              <div class="show-user-name">
+                <p class="alignment-ans-user"><%= Answer[i].user_name %> </p>
+              </div>
+
+              <div class="last-updated">
+                <p>Updated <%= Answer[i].date.toLocaleDateString("en-US",{year:'numeric',month:'long',day:'numeric'}); %></p>
+              </div>
+
+              <div class="ans-content">
+                <p><%- Answer[i].answer %></p>
+              </div>
+
+              <div class="disp-img-upld">
+                <% if(Answer[i].images){ %>
+                  <img class="" src="/images/uploaded/<%-Answer[i].images %>">
+                <% } %>
+              </div>
+
+              <div class="ask-sugg">
+                <p class="q">Was this answer helpful?</p>
+                <p style="color:grey"><%= Answer[i].upvotes.length %> found it helpful</p>
+              </div>
+
+              <div class="ans-number-of-likes">
+                <% if(Answer[i].upvotes.length >0){ %>
+                <%= Answer[i].upvotes.length %>
+                <% } %>
+              </div>
+
+              <div class="ans-likes">
+                <% if(Answer[i].upvotes.includes(User._id)){ %>
+                <a onclick="addAnsLikes('<%= Answer[i]._id %>','<%= User._id %>')" style="color:green" ><i class="fas fa-thumbs-up like-icon"></i></a>
+                <% }else{ %>
+                <a onclick="addAnsLikes('<%= Answer[i]._id %>','<%= User._id %>')" ><i class="fas fa-thumbs-up like-icon"></i></a>
+                <% } %>
+              </div>
+
+              <div class="ans-number-of-dislikes">
+                <% if(Answer[i].downvotes.length >0){ %>
+                <%= Answer[i].downvotes.length %>
+                <% } %>
+              </div>
+
+              <div class="ans-dislikes">
+                <% if(Answer[i].downvotes.includes(User._id)){ %>
+                <a onclick="addAnsDislikes('<%= Answer[i]._id %>','<%= User._id %>')" style="color:red" ><i class="fas fa-thumbs-down dislike-icon"></i></a>
+                <% }else{ %>
+                <a onclick="addAnsDislikes('<%= Answer[i]._id %>','<%= User._id %>')" ><i class="fas fa-thumbs-down dislike-icon"></i></a>
+                <% } %>
+              </div>
+
+              <div class="add-ans-cmts">
+                <a onclick="dispCmts('<%= Answer[i]._id%>','<%= User._id%>')"><i class="far fa-comment"></i></a>
+              </div>
+
+
+              <% if(Answer[i].user_id == User._id.toString()){ %>
+              <div class="to-del">
+              <div class="dropdown">
+                  <p  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-ellipsis-h"></i></p>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" onclick="invokeDel('<%= Answer[i]._id%>')">Delete</a>
+                  </div>
+              </div>
+              </div>
+              <% } %>
+
+              <div class="border ans-no-cmts">
+                <div class="cmts-user-img">
+                  <% if(User.userphoto){ %>
+                    <img src="<%- User.userphoto %>" alt="user-img" />
+                  <% }else{ %>
+                    <img class="" src="/images/anonymous.png" alt="user-img">
+                  <% } %>
+                </div>
+                  <div class="cmts-user-input">
+                    <textarea name="name" placeholder="Add a comment..."></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-sm btn-primary" onclick="addCmts('<%=Answer[i]._id%>','<%= User._id%>')">Add Comment</button>
+
+              </div>
+
+              <div class="show-prev-cmts">
+
+              </div>
+
+              </div>
+          <% }}} %>
+
+
+
+
+      </div>
+      <div class="col-lg-3">
+
+      </div>
+    </div>
+  </div>
+  </section>
+
+<%- include("partials/footer.ejs"); %>

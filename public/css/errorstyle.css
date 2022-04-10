@@ -1,0 +1,46 @@
+body{
+  background-color: #ededed;
+  align-content: center;
+}
+
+
+.brand{
+  display: inline-block;
+}
+
+
+
+.error{
+  display: inline-block;
+  justify-content: center;
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
+  margin-left: 35%;
+  margin-top: 10%;
+}
+
+.error .info{
+  text-align: center;
+  font-family: 'Ubuntu',sans-serif;
+}
+
+.error .content{
+  font-family: 'Ubuntu',sans-serif;
+  font-size: 120%;
+  word-wrap: break-word;
+  color: grey;
+  margin-bottom: 10%;
+}
+
+.heading{
+  padding-left: 10%;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 300%;
+  color:  #B92B27;
+}
+
+.card-footer{
+  display: block;
+}

@@ -1,0 +1,82 @@
+<%- include("partials/header.ejs"); %>
+    <section id="profile">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3">
+
+          </div>
+          <div class="col-lg-5">
+            <div class="profile-info">
+              <div class="profile-picture">
+                <% if(Profile[0].userphoto){ %>
+                <img class="" src="<%= Profile[0].userphoto %>" alt="img" />
+                <% }else{  %>
+                <img class="" src="images/anonymous.png" alt="user-img">
+                <% } %>
+              </div>
+              <div class="profile-name">
+                <p class=""><%- Profile[0].name %></p>
+              </div>
+              <% if(User._id.toString() != Profile[0]._id.toString()){ %>
+                <% let f=0; %>
+
+                <% for(var i=0;i<Notification.length;i++){ %>
+                <% if((Notification[i].to == Profile[0]._id.toString()) && (Notification[i].from == User._id.toString()) && (Notification[i].status == "pending")){ %>
+                <%  f=1;}%>
+                <% if((Notification[i].to == Profile[0]._id.toString()) && (Notification[i].from == User._id.toString()) && (Notification[i].status == "accepted")){ %>
+                <% f=2;}if((Notification[i].to == User._id.toString()) && (Notification[i].from == Profile[0]._id.toString()) && (Notification[i].status == "pending")){ %>
+                <% f=3;}if((Notification[i].to == User._id.toString()) && (Notification[i].from == Profile[0]._id.toString()) && (Notification[i].status == "accepted")){ %>
+                <% f=2;}%>
+                <% }%>
+
+
+                <% if(f==0){ %>
+                <div class="add-button">
+                  <button class="btn " onclick="addFriend('<%= User._id %>','<%= Profile[0]._id%>')"><i class="fas fa-user-plus"></i>ADD</button>
+                </div>
+                <% } else if(f==1){ %>
+                  <div class="request-button">
+                    <button class="btn ">Request Sent</button>
+                  </div>
+                <% } else if(f==2){ %>
+                  <div class="remove-button">
+                    <button class="btn " onclick="removeFriend('<%= User._id %>','<%= Profile[0]._id%>')"><i class="fas fa-minus-circle"></i>UNFRIEND</button>
+                  </div>
+                <% } else if(f==3){ %>
+                  <div class="accept-button">
+                    <button class="btn" href="/social">see Request</button>
+                  </div>
+                <% } %>
+              <% } %>
+
+            </div>
+            <div class="profile-stats">
+              <input class="friend" value="<%=Profile[0]._id%>" hidden>
+              <input class="user" value="<%=User._id%>" hidden>
+              <div class="profile">
+                <p onclick = "showProfile()">Profile</p>
+              </div>
+              <div class="answers">
+
+              </div>
+              <div class="questions">
+
+              </div>
+              <div class="friends">
+
+              </div>
+
+            </div>
+            <div class="selected-body">
+
+            </div>
+          </div>
+          <div class="col-lg-4">
+
+          </div>
+        </div>
+      </div>
+
+      </section>
+<script src="/js/profile.js" charset="utf-8"></script>
+<%- include("partials/footer.ejs"); %>

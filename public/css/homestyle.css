@@ -1,0 +1,1514 @@
+
+
+.heading{
+  padding-left: 10%;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 500;
+  font-size: 200%;
+  color:  #B92B27;
+}
+
+.wrapper{
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
+  width: 100%;
+  display: flex;
+  padding-top: 1%;
+  padding-bottom: 0.2%;
+  box-shadow: 0 0 2px rgba(0, 0, 1, 0.5);
+  z-index: 1;
+  background-color: white;
+}
+
+
+
+.wrapper .search-input{
+  margin-left: 8%;
+  max-width: 360px;
+  position: relative;
+  width:100%;
+  border-radius: 5px;
+}
+
+.search-input input{
+  height:37px;
+  width: 100%;
+  border-radius: 3px ;
+
+  padding-left: 30px;
+}
+
+.show-toggle-btn{
+  display: none;
+}
+
+.search-input .icon{
+  position: absolute;
+  top:0;
+  left:0;
+  margin-top: 12px;
+  margin-left: 7px;
+  font-size: 17px;
+  color: grey;
+}
+
+.options{
+  margin:auto;
+  position: absolute;
+}
+
+.options li{
+  padding:5px;
+  display: none;
+}
+
+.search-input.active .options{
+  border-color: black;
+}
+
+.search-input.active .options a{
+  text-decoration: none;
+}
+
+.search-input.active .options li{
+  display: block;
+  color: black;
+  background-color: white;
+  z-index: 1;
+  width: 360px;
+  opacity: 1;
+}
+
+.search-input.active .options li:hover{
+  background-color: #efefef;
+}
+.wrapper .home-icon{
+  margin-left: 6%;
+}
+.wrapper .home-icon .fa-home{
+  margin-top: 5%;
+  color: grey;
+  font-size:200%;
+}
+.wrapper .home-icon .fa-home:hover{
+  color: #B92B27;
+}
+
+.wrapper .compose-icon,
+.wrapper .spaces-icon,
+.wrapper .notification-icon,
+.wrapper .images,
+.wrapper .add-question,
+.wrapper .logout-icon{
+  margin-left: 2%;
+}
+.wrapper .compose-icon .fa-edit{
+  color:grey;
+  font-size: 200%;
+}
+.wrapper .compose-icon .fa-edit:hover{
+  color: #B92B27;
+}
+
+.wrapper .logout-icon .fa-sign-out-alt{
+  color:grey;
+  font-size: 200%;
+}
+.wrapper .logout-icon .fa-sign-out-alt:hover{
+  color: #B92B27;
+}
+
+.wrapper .spaces-icon .fa-users{
+  color: grey;
+  font-size: 220%;
+}
+.wrapper .spaces-icon .fa-users:hover{
+  color:#B92B27;
+}
+.wrapper .notification-icon .fa-bell{
+  color:grey;
+  font-size: 200%;
+}
+.wrapper .notification-icon .fa-bell:hover{
+  color:#B92B27;
+}
+.wrapper .images img{
+  width:40px;
+  border-radius: 20px;
+}
+.wrapper .images .fa-user-circle{
+  color: grey;
+  font-size: 200%;
+}
+
+.add-question .add-q{
+  border-radius: 10%;
+  background-color:#B92B27;
+  color: white;
+}
+.add-question .close{
+  background-color: white;
+  color: black;
+}
+
+.modal-body .q-info{
+  margin-left:2%;
+  margin-right: 3%;
+  float: left;
+}
+
+
+
+.modal-body .select-option{
+  border-radius: 50px;
+}
+.modal-body select{
+  font-family:'FontAwesome','Second Font name';
+  height: 30px;
+}
+
+.modal-footer button .btn-light{
+  background-color: white;
+  color: black;
+}
+/*Home.ejs */
+
+
+#home{
+  margin-top: 10%;
+  overflow:auto;
+}
+
+
+.col-lg-6 .Salutation{
+  margin-left: 40px;
+  background-color: white;
+  width:650;
+  height: 200px;
+  border:1px solid #dddddd;
+  border-radius: 20px;
+}
+
+.col-lg-6 .Salutation .content{
+  font-family: 'Ubuntu',sans-serif;
+  font-size: 25px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.col-lg-6 .Salutation .show-q{
+  margin-top: 15px;
+  font-family: 'Roberto',sans-serif;
+    text-align: center;
+}
+
+.col-lg-6 .Salutation .wrap-ask-q .profile-pic img{
+  border-radius: 25px;
+  width: 40px;
+  margin-top: 0px;
+  margin-left: 100px;
+}
+.col-lg-6 .Salutation .wrap-ask-q .profile-pic .ask-q{
+  display: inline-block;
+  margin-left: 20px;
+  width: 300px;
+}
+.col-lg-6 .Salutation .wrap-ask-q .profile-pic .ask-q input{
+  height:37px;
+  margin-top: 20px;
+  display: inline-block;
+  border-radius: 3px ;
+  padding-left: 30px;
+  width: 300px;
+  border-radius: 20px;
+  border:1px solid grey;
+  background-color: #ededed;
+}
+
+
+.col-lg-6 .home-content .each-questions{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  background-color: white;
+  border-bottom: 1px solid #dee0e1;
+  width: 650px;
+  border-radius: 10px;
+}
+
+.col-lg-6 .home-content .each-questions .user-img{
+  display: inline-block;
+}
+
+.col-lg-6 .home-content .each-questions .user-img img{
+  display: inline-block;
+  border-radius: 50%;
+  width:60px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.col-lg-6 .home-content .each-questions .user-name{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.col-lg-6 .home-content .each-questions .user-name p{
+  display: inline-block;
+  font-family: 'Roberto',sans-serif;
+  font-weight: 600;
+}
+
+.col-lg-6 .home-content .each-questions .user-date{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.col-lg-6 .home-content .each-questions .user-date p{
+  display: inline-block;
+  margin-left: 5px;
+  font-family: 'Roberto',sans-serif;
+  color: #EDEDED;
+}
+
+.col-lg-6 .home-content .each-questions .question{
+  margin-top: 15px;
+  margin-left: 15px;
+  font-family: 'Roberto',sans-serif;
+  font-weight: 600;
+  display: inline-block;
+  width:600px
+}
+
+.col-lg-6 .home-content .each-questions .question a{
+  text-decoration: none;
+  color: black;
+}
+
+.col-lg-6 .home-content .each-questions .answer-q{
+  margin-left: 15px;
+  font-family: 'Roberto',sans-serif;
+  font-weight: 300;
+  display: inline-block;
+  width: 600px;
+}
+.col-lg-6 .home-content .each-questions .ans-img {
+  margin-left: 25px;
+  margin-bottom: 15px;
+}
+.col-lg-6 .home-content .each-questions .ans-img img{
+  width:600px;
+}
+.col-lg-6 .home-content .each-questions .wrap-emotions{
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+.col-lg-6 .home-content .each-questions .wrap-emotions .number-of-likes{
+  display: inline-block;
+  font-size: 100%;
+}
+
+.col-lg-6 .home-content .each-questions .wrap-emotions .likes{
+  display: inline-block;
+  margin-left: 5px;
+}
+.col-lg-6 .home-content .each-questions .wrap-emotions .likes .like-icon{
+  display: inline-block;
+  font-size: 150%;
+}
+.col-lg-6 .home-content .each-questions .wrap-emotions .number-of-dislikes{
+  display: inline-block;
+  font-size: 100%;
+  margin-left: 10px;
+}
+.col-lg-6 .home-content .each-questions .wrap-emotions .dislikes{
+  display: inline-block;
+  margin-left: 5px;
+}
+.col-lg-6 .home-content .each-questions .wrap-emotions .dislikes .dislike-icon{
+  display: inline-block;
+  font-size: 150%;
+}
+.col-lg-3 .show-stats .stats-heading{
+  display: inline-block;
+  width:350;
+  background-color: white;
+  border:1px solid #dddddd;
+  border-radius: 20px;
+  padding-bottom: 10px;
+}
+.col-lg-3 .show-stats .stats-heading .header{
+  text-align: center;
+  font-family: 'Ubuntu',sans-serif;
+  margin-bottom: 10px;
+}
+.col-lg-3 .show-stats .stats-heading .l-body .each-tag{
+  align-content:  center;
+  display: block;
+  font-family: 'Roberto',sans-serif;
+  margin-top: 10px;
+  margin-left: 115px;
+}
+
+/*answer.ejs */
+body{
+  background-color: #EDEDED;
+}
+#answer{
+  margin-top: 10%;
+  overflow: auto;
+}
+.row{
+  position: relative;
+}
+
+.col-lg-3 .container{
+  display: block;
+  text-align: right;
+}
+
+.col-lg-3 .container .Q-left-header{
+  font-family: 'Ubuntu',sans-serif;
+  display: inline-block;
+  text-align: right;
+  width: 150px;
+  height: 35px;
+  border-bottom:2px solid #dddddd;
+}
+.col-lg-3 .container .Q-left-header .q{
+  margin-right: 10px;
+  text-align:center;
+  font-size: 20px;
+}
+
+.col-lg-3 .container .Q-left-add-q{
+  margin-top: 3px;
+  display: block;
+  text-align: right;
+}
+.col-lg-3 .container .Q-left-add-q .aq{
+  display: inline-block;
+  width: 150px;
+  height: 25px;
+  text-align: center;
+  border-radius: 5px;
+}
+.col-lg-3 .container .Q-left-add-q .aq:hover{
+  background-color: #dddddd;
+}
+.col-lg-3 .container .Q-left-ans-ltr{
+  margin-top: 3px;
+  display: block;
+  text-align: right;
+}
+.col-lg-3 .container .Q-left-ans-ltr .al{
+  display: inline-block;
+  width: 150px;
+  height: 25px;
+  text-align: center;
+  border-radius: 5px;
+}
+.col-lg-3 .container .Q-left-ans-ltr .al:hover{
+  background-color: #dddddd;
+}
+.col-lg-5{
+  background-color: white;
+  border: 1px solid #dddddd;
+}
+
+.display-question{
+  margin-bottom: 2%;
+}
+.display-question .q-title-div{
+  font-family: "Ubuntu",sans-serif;
+  width: 150px;
+  height: 35px;
+  font-size: 20px;
+  position: relative;
+  margin-bottom: 10px;
+  border-bottom:2px solid #dddddd;
+}
+
+.display-question .each-question{
+  position: relative;
+  background-color: white;
+  border: 1px solid #dddddd;
+}
+.display-question .each-question .questions{
+  margin-top: 2%;
+  font-family: 'Roberto', sans-serif;
+  font-weight: 600;
+  font-size: 120%;
+  padding-left: 1%;
+}
+.each-question .q-user-img{
+  display: inline-block;
+}
+
+.each-question .q-user-img img{
+  border-radius: 50%;
+  width: 50px;
+  margin-left: 1%;
+  margin-top: 3%;
+}
+
+.each-question a{
+  color: black;
+}
+
+.each-question .q-user-details{
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 1%;
+  font-weight: 700;
+}
+
+.each-question .user-date{
+  display: inline-block;
+  margin-left: 5px;
+  color:grey;
+}
+
+.each-question button{
+  margin-bottom: 2%;
+  color: black;
+  font-weight: 600;
+  background-color: white;
+}
+
+.each-question button:hover{
+  background-color: #f8f9fa;
+  border-color: grey;
+  border-radius: 5px;
+}
+
+.each-question .likes{
+display: inline-block;
+margin-left: 65%;
+}
+
+.each-question .likes .like-icon{
+  display: inline-block;
+  font-size: 150%;
+}
+.each-question .number-of-likes{
+  display: inline-block;
+  font-size: 150%;
+  position: absolute;
+  margin-left: 60%;
+}
+
+.each-question .number-of-dislikes{
+  display: inline-block;
+  font-size: 150%;
+  position: absolute;
+  margin-left: 2%
+}
+
+.each-question .dislikes .dislike-icon{
+  display: inline-block;
+  font-size: 150%;
+}
+.each-question .dislikes{
+  display: inline-block;
+  margin-left: 4%;
+}
+
+
+.each-question .dropdown {
+  margin-left: 2%;
+  display: inline-block;
+  font-size: 150%;
+}
+
+.each-question .close-icon{
+  position: absolute;
+  right: 0;
+  margin-top: 3%;
+  margin-right: 5%;
+}
+
+.each-question .close-icon:hover{
+  color: red;
+}
+
+.inputAnswer{
+  margin-top: 2%;
+  margin-bottom: 4%;
+  display: none;
+}
+
+.inputAnswer.active{
+  display: block;
+}
+
+.inputAnswer .editor,
+.inputAnswer .disp-pic-ans,
+.inputAnswer .select-icon,
+.inputAnswer .submit-op
+{
+  margin-left: 20px;
+  width: 650px;
+}
+
+.inputAnswer .editor{
+  padding-top: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height:150px;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.inputAnswer .select-icon {
+  position: relative;
+  height:50px;
+}
+
+.inputAnswer .select-icon .the-icons{
+  position: absolute;
+  font-size: 28px;
+}
+
+.inputAnswer .select-icon .the-icons .movie-img{
+  margin-left: 450px;
+}
+
+.inputAnswer .disp-pic-ans{
+  background-color: #e6e6e6;
+}
+
+.inputAnswer .disp-pic-ans .dis-pic-ua{
+  display: inline-block;
+}
+
+.inputAnswer .submit-op{
+  background-color: #e6e6e6;
+}
+
+.inputAnswer .submit-op button{
+  background-color: blue;
+  margin-left: 2%;
+  color: white;
+  border-radius: 20px;
+  margin-top: 2%;
+}
+
+.inputAnswer .disp-pic-ans img{
+  margin: 20px 0 20px 20px;
+  width:40px;
+  border-radius: 20px;
+}
+.inputAnswer .disp-pic-ans .wrap{
+  /*float: right;*/
+  display: inline-block;
+  /*margin-right: 460px;*/
+  margin-top: 20px;
+}
+.inputAnswer .disp-pic-ans .fa-user-circle{
+  margin: 20px 0 20px 20px;
+  color: grey;
+  font-size: 200%;
+}
+
+
+/* display each answer */
+
+#answer-display{
+  margin-top: 10%;
+  overflow: auto;
+}
+
+.show-q-a{
+  background-color: white;
+}
+
+.delete-question{
+  border: 1px solid #dee2e6;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 40px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.delete-question p{
+  font-weight: 600;
+}
+
+.delete-question .trash{
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.delete-question .your-a-deleted{
+  font-size: 20px;
+}
+
+.show-question{
+  position: relative;
+  margin-top: 20px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.show-question .disp-q{
+  font-family: 'Roberto', sans-serif;
+  font-weight: 700;
+  font-size: 140%;
+  display: inline-block;
+}
+
+.show-question .dropdown{
+  display: inline-block;
+  float: right;
+  margin-right: 10px;
+  margin-top:10px;
+}
+
+.show-particular{
+  border-bottom: 1px solid #dee2e6;
+}
+
+.show-particular img{
+  margin: 20px 0 20px 340px;
+  width:40px;
+  border-radius: 20px;
+}
+
+.show-particular .align-centre{
+  text-align: center;
+}
+
+.show-particular p{
+  font-family: 'Roberto', sans-serif;
+  font-weight: 600;
+  font-size: 100%;
+  display: inline-block;
+}
+
+.show-particular .small-adj{
+  margin-left: 300px;
+  margin-bottom: 2%;
+  color: black;
+  font-weight: 600;
+  background-color: white;
+  border-color: grey;
+}
+
+.show-particular .small-adj:hover{
+  background-color: #DDDDDD;
+  border-color: #DDDDDD;
+  border-radius: 5px;
+}
+
+.show-particular button{
+  margin-bottom: 2%;
+  color: black;
+  font-weight: 600;
+  background-color: white;
+}
+
+.show-particular button:hover{
+  background-color: #f8f9fa;
+  border-color: grey;
+  border-radius: 5px;
+}
+
+.no-of-ans{
+  margin-top: 10px;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.no-of-ans p{
+  font-family: 'Roberto', sans-serif;
+  font-weight: 600;
+  font-size: 100%;
+}
+
+.disp-user-ans{
+  margin-bottom: 100px;
+}
+
+.disp-user-ans .show-user-img{
+  display: inline-block;
+}
+
+.disp-user-ans .show-user-img img{
+  border-radius: 50%;
+  width: 45px;
+  margin-left: 2px;
+  margin-top: 10px;
+}
+.disp-user-ans .show-user-name{
+  display: inline-block;
+  margin-top: 3%;
+  margin-left: 1%;
+  font-weight: 700;
+}
+
+.disp-user-ans .last-updated{
+  color: grey;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.disp-user-ans .ans-content{
+  margin-top: 15px;
+}
+
+.disp-user-ans .disp-img-upld img{
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.disp-user-ans .ans-likes{
+display: inline-block;
+margin-left: 2%;
+}
+
+.disp-user-ans .ans-likes .like-icon{
+  display: inline-block;
+  font-size: 150%;
+}
+.disp-user-ans .ans-number-of-likes{
+  display: inline-block;
+  font-size: 100%;
+  position: absolute;
+}
+
+.disp-user-ans .ans-number-of-dislikes{
+  display: inline-block;
+  font-size: 100%;
+  position: absolute;
+  margin-left: 2%;
+}
+
+.disp-user-ans .ans-dislikes .dislike-icon{
+  display: inline-block;
+  font-size: 150%;
+}
+.disp-user-ans .ans-dislikes{
+  display: inline-block;
+  margin-left: 4%;
+}
+
+.disp-user-ans .ask-sugg p{
+  display: inline-block;
+}
+
+.disp-user-ans .ask-sugg .q{
+  font-family: 'Roberto', sans-serif;
+  font-weight: 600;
+  font-size: 100%;
+}
+
+
+.disp-user-ans .add-ans-cmts{
+display: inline-block;
+margin-left: 5%;
+font-size: 150%;
+}
+
+.disp-user-ans .to-del {
+  display: inline-block;
+  margin-left: 500px;
+}
+
+.disp-user-ans .deleted-ans{
+  border: 1px solid #dee2e6;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.disp-user-ans .deleted-ans p{
+  font-weight: 600;
+}
+
+.disp-user-ans .deleted-ans .trash{
+  margin-top: 20px;
+  font-size: 30px;
+}
+
+.disp-user-ans .deleted-ans .your-a-deleted{
+  font-size: 20px;
+}
+
+.disp-user-ans .ans-no-cmts{
+  display: block;
+  margin-top: 20px;
+  height: 55px;
+  background-color: #EDEDED;
+  position: relative;
+}
+
+.disp-user-ans .ans-no-cmts .cmts-user-img{
+  display: inline-block;
+  position: absolute;
+  margin-top: 5px;
+}
+
+.disp-user-ans .ans-no-cmts .cmts-user-img img{
+  display: inline-block;
+  border-radius: 50%;
+  width: 40px;
+  margin-left: 30px;
+}
+
+
+
+.disp-user-ans .ans-no-cmts .cmts-user-input {
+  display: inline-block;
+  margin-left: 80px;
+  height: 40px;
+  margin-top: 5px;
+}
+
+.disp-user-ans .ans-no-cmts .cmts-user-input textarea{
+  height: 40px;
+  border: none;
+  width: 500px;
+  border-radius: 20px;
+  resize: none;
+  padding-left: 30px;
+  padding-top: 7px;
+  font-family: 'Roberto', sans-serif;
+  outline: none;
+}
+
+.disp-user-ans .ans-no-cmts  button{
+  margin-bottom: 35px;
+  margin-left: 10px;
+  border-radius: 20px;
+}
+
+.disp-user-ans .show-prev-cmts .each-cmt{
+  background-color: #EDEDED;
+  padding-bottom: 10px;
+}
+
+.disp-user-ans .show-prev-cmts .each-cmt .username{
+  display: inline-block;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.disp-user-ans .show-prev-cmts .each-cmt img{
+  display: inline-block;
+  border-radius: 50%;
+  width: 40px;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.disp-user-ans .show-prev-cmts .each-cmt .date{
+  display: inline-block;
+  color:grey;
+  margin-left: 10px;
+}
+
+.disp-user-ans .show-prev-cmts .each-cmt .body{
+  margin-left: 85px;
+  font-family: 'Roberto', sans-serif;
+}
+
+.disp-user-ans .show-prev-cmts .each-cmt .cmts-number-of-likes{
+  display: inline-block;
+  font-size: 100%;
+  position: absolute;
+  margin-left: 85px;
+}
+
+.disp-user-ans .show-prev-cmts .each-cmt .cmts-likes{
+  display: inline-block;
+  margin-left: 100px;
+}
+
+.disp-user-ans .show-prev-cmts .each-cmt .cmts-likes .like-icon{
+  display: inline-block;
+  font-size: 150%;
+}
+
+
+.disp-user-ans .show-prev-cmts .each-cmt .cmts-number-of-dislikes{
+  display: inline-block;
+  font-size: 100%;
+  position: absolute;
+  margin-left: 2%;
+}
+
+.disp-user-ans .show-prev-cmts .each-cmt .cmts-dislikes .dislike-icon{
+  display: inline-block;
+  font-size: 150%;
+}
+.disp-user-ans .show-prev-cmts .each-cmt .cmts-dislikes{
+  display: inline-block;
+  margin-left: 4%;
+}
+
+.disp-user-ans .show-prev-cmts .each-cmt .dropdown{
+  display: inline-block;
+  margin-left: 500px;
+}
+
+/* profile */
+#profile{
+  margin-top: 10%;
+  overflow: auto;
+}
+
+.profile-info .profile-picture img{
+  margin-top: 20px;
+  width:100px;
+  display: inline-block;
+  border-radius: 60px;
+  float: left;
+}
+
+.profile-info .profile-name{
+  display: inline-block;
+  margin-top: 50px;
+  margin-left: 20px;
+  font-family: 'Ubuntu',sans-serif;
+  font-size: 20;
+}
+
+.profile-info .add-button,
+.profile-info .remove-button,
+.profile-info .request-button,
+.profile-info .accept-button{
+  display: inline-block;
+}
+
+.profile-info .add-button button{
+  display: inline-block;
+  margin-left: 20px;
+  width: 100px;
+  border-radius: 20px;
+}
+
+.profile-info .remove-button button{
+  display: inline-block;
+  margin-left: 20px;
+  width: 120px;
+  border-radius: 20px;
+}
+
+.profile-info .request-button button{
+  display: inline-block;
+  margin-left: 20px;
+  width: 120px;
+  border-radius: 20px;
+}
+
+.profile-info .accept-button button{
+  display: inline-block;
+  margin-left: 20px;
+  width: 120px;
+  border-radius: 20px;
+}
+
+.profile-stats{
+  margin-top: 40px;
+  padding-top: 15px;
+  border-top: 1px solid #dee0e1;
+  border-bottom: 1px solid #dee0e1;
+}
+
+.profile-stats .profile,
+.profile-stats .answers,
+.profile-stats .questions,
+.profile-stats .friends{
+  display:inline-block;
+  font-family: 'Roberto',sans-serif;
+  color:grey;
+  padding-right:15px;
+}
+
+.profile-stats .profile:hover,
+.profile-stats .answers:hover,
+.profile-stats .questions:hover,
+.profile-stats .friends:hover{
+  color: red;
+}
+
+.selected-body .showQ{
+  margin-top: 10px;
+  border-bottom: 1px solid #dee0e1;
+  padding-bottom: 10px;
+  font-family: 'Ubuntu',sans-serif;
+  font-weight: 600;
+}
+
+.selected-body .each-question{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dee0e1;
+}
+
+.selected-body .each-question:hover{
+  background-color: #EFEFEF;
+}
+
+.selected-body .each-question .user-img{
+  display: inline-block;
+}
+
+.selected-body .each-question .user-img img{
+  display: inline-block;
+  border-radius: 50%;
+  width:60px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.selected-body .each-question .user-name{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.selected-body .each-question .user-name p{
+  display: inline-block;
+  font-family: 'Roberto',sans-serif;
+  font-weight: 600;
+}
+
+.selected-body .each-question .user-date{
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.selected-body .each-question .user-date p{
+  display: inline-block;
+  margin-left: 5px;
+  font-family: 'Roberto',sans-serif;
+  color: #EDEDED;
+}
+
+.selected-body .each-question .question{
+  margin-top: 15px;
+  margin-left: 15px;
+  font-family: 'Roberto',sans-serif;
+  font-weight: 600;
+  display: inline-block;
+  width:420px;
+}
+
+.selected-body .each-question .question a{
+  text-decoration: none;
+}
+
+.selected-body .each-question .answer-q{
+  margin-left: 15px;
+  font-family: 'Roberto',sans-serif;
+  font-weight: 300;
+  display: inline-block;
+  width: 420px;
+}
+
+.selected-body .each-question .dropdown{
+  margin-left: 140px;
+}
+
+.selected-body .show-user-fri-c{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dee0e1;
+  padding-bottom: 20px;
+}
+
+.selected-body .show-user-fri-c img{
+  display: inline-block;
+  border-radius: 50%;
+  width:60px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.selected-body .show-user-fri-c p{
+  display: inline-block;
+  font-family: 'Roberto',sans-serif;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+/*for chat and friend request */
+
+#chat{
+  padding-top: 10%;
+  overflow: auto;
+  background-color: #EDEDED;
+}
+
+#chat {
+  background-color: #EDEDED;
+  padding-bottom: 30px;
+}
+
+.menu-req-msg{
+  margin-left: 100px;
+  border: 1px solid white;
+  margin-right: 60px;
+  background-color: white;
+}
+
+.menu-req-msg .menu-title{
+  display: inline-block;
+}
+
+.menu-req-msg .menu-title p{
+  display: inline-block;
+  font-family: 'Roberto',sans-serif;
+  font-weight: 700;
+  padding-top: 10px;
+  margin-left: 30px;
+
+}
+
+.menu-req-msg .menu-content .friend-request p{
+  display: inline-block;
+  border:none;
+  outline:none;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.menu-req-msg .menu-content .view-friends-list p{
+  display: inline-block;
+  border:none;
+  outline:none;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.menu-req-msg .menu-content .see-messages p{
+  display: inline-block;
+  border:none;
+  outline:none;
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.menu-req-msg .menu-content .friend-request p:hover,
+.menu-req-msg .menu-content .see-messages p:hover{
+  background-color: #EDEDED;
+}
+
+.messaging-space{
+  background-color: white;
+  width:900px;
+  height:410px;
+  overflow: hidden;
+}
+
+.messaging-space .show-requests,
+.messaging-space .show-friends{
+  border:1px solid black;
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 30px;
+  width:740px;
+}
+
+.messaging-space .show-requests p,
+.messaging-space .show-friends p{
+  display: inline-block;
+  font-family: 'Ubuntu',sans-serif;
+  margin-left: 10px;
+}
+
+.messaging-space .show-requests img,
+.messaging-space .show-friends img{
+  display: inline-block;
+  width:60px;
+  border-radius: 40px;
+  margin-top: 10px;
+  margin-left:10px;
+  margin-bottom: 10px;
+}
+
+.messaging-space .show-requests .accept,
+.messaging-space .show-friends .unfriend{
+  float: right;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.messaging-space .show-requests .decline{
+  float: right;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.messaging-space .inbox-names{
+  display:inline-block;
+  overflow: auto;
+  width: 300px;
+  height:410px;
+  border-right: 1px solid #EDEDED;
+}
+
+.messaging-space .inbox-names .inbox-index-title{
+  display: inline-block;
+  border:1px solid white;
+  width:294px;
+  border-bottom: 1px solid #EDEDED;
+}
+
+.messaging-space .inbox-names .inbox-index-title p{
+  display: inline-block;
+  font-family: 'Roberto',sans-serif;
+  margin-top: 20px;
+  font-weight: 700;
+
+  margin-left: 50px;
+  font-size: 15px;
+}
+
+.messaging-space .inbox-names .show-chat-friends{
+  display: inline-block;
+  border:1px solid white;
+  width:294px;
+  border-bottom: 1px solid #ededed;
+}
+
+.messaging-space .inbox-names .show-chat-friends:hover{
+  background-color: #EDEDED;
+}
+
+.messaging-space .inbox-names .show-chat-friends p{
+  display: inline-block;
+  font-family: 'Roberto',sans-serif;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width:200px;
+  margin-top: 10px;
+}
+
+.messaging-space .inbox-names .show-chat-friends img{
+  display: inline-block;
+  width:60px;
+  border-radius: 30px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.messaging-space .user-friend-chat{
+  display: inline-block;
+  width:600px;
+  float: right;
+}
+
+.messaging-space .user-friend-chat .chatting-friend-det{
+  display: inline-block;
+  width:600px;
+  border-bottom: 1px solid #ededed;
+  box-shadow: 0px 15px 10px -15px grey;
+}
+
+.messaging-space .user-friend-chat .chatting-friend-det p{
+  display: inline-block;
+  margin-left: 10px;
+  font-family: 'Ubuntu',sans-serif;
+}
+
+.messaging-space .user-friend-chat .chatting-friend-det img{
+  display: inline-block;
+  width:80px;
+  border-radius: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+
+.messaging-space .user-friend-chat .chat-area{
+  display: inline-block;
+  width:600px;
+  height: 240px;
+  overflow: auto;
+}
+
+.messaging-space .user-friend-chat .chat-area .common-no-message{
+  display: inline-block;
+  width:550px;
+  margin-left: 30px;
+  margin-top: 20px;
+  text-align: center;
+  background-color: #FFE5B9;
+}
+
+.messaging-space .user-friend-chat .chat-area .message-from-you{
+  float: right;
+  display: block;
+  margin-top: 5px;
+  width:586px;
+}
+
+.messaging-space .user-friend-chat .chat-area .message-from-friend{
+  float: left;
+  display: block;
+  width:550px;
+  margin-top: 5px;
+}
+
+
+.messaging-space .user-friend-chat .chat-area .chat-date{
+  text-align: center;
+  display: block;
+  margin-top:5px;
+
+}
+
+/*for red scrollbar*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #B92B27;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: red;
+}
+
+.messaging-space .user-friend-chat .chat-area .chat-date p{
+  display: inline-block;
+  max-width: 400px;
+  min-width: 100px;
+  text-align: center;
+  background-color: #FFE5B9;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+
+}
+
+.messaging-space .user-friend-chat .chat-area .message-from-you p{
+  display: inline-block;
+  max-width: 400px;
+  min-width: 100px;
+  text-align: left;
+  float:right;
+  border-radius: 20px;
+  background-color: #FF9292;
+  max-height: 200px;
+  min-height: 30px;
+  word-break: break-all;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 2px;
+}
+
+.messaging-space .user-friend-chat .chat-area .message-from-friend p{
+  display: inline-block;
+  font-family: 'Roberto',sans-serif;
+  max-width: 400px;
+  min-width: 100px;
+  max-height: 200px;
+  min-height: 30px;
+  border-radius: 20px;
+  text-align: left;
+  float:left;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: #EDEDED;
+  word-break: break-all;
+  vertical-align: middle;
+  padding-top: 2px;
+}
+
+.messaging-space .user-friend-chat .chat-area .common-no-message p{
+  display: inline-block;
+}
+ .messaging-space .user-friend-chat .user-message-chatbox{
+   display: inline-block;
+   width:500px;
+   margin-left:30px;
+   position: relative;
+ }
+
+.messaging-space .user-friend-chat .user-message-chatbox textarea{
+  display: inline-block;
+  width: 500px;
+  outline: none;
+  resize: none;
+  position: relative;
+  border-radius: 50px;
+  padding-left: 20px;
+  padding-right: 50px;
+  padding-top: 10px;
+}
+
+.messaging-space .user-friend-chat .user-message-chatbox button{
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top:15px;
+  border-radius: 30px;
+}
+
+@media(max-width:1028px){
+  .messaging-space{
+    background-color: white;
+    margin-top: 10%;
+    width:900px;
+    height:900px;
+  }
+
+  .messaging-space .user-friend-chat .chat-area{
+    display: inline-block;
+    width: 605px;
+    height: 705px;
+    overflow: auto;
+  }
+
+  .show-stats{
+    margin-top: 10%;
+    margin-left: 5%;
+  }
+
+}
+
+/* displaying notification*/
+#notification{
+  margin-top: 10%;
+  overflow: auto;
+}
+
+#notification .col-lg-3 .not-title{
+  display: inline-block;
+  width: 190px;
+  margin-left: 140px;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+  font-family: Ubuntu;
+}
+
+#notification .col-lg-3 a .not-opt{
+  display: inline-block;
+  width: 200px;
+  margin-left: 130px;
+  margin-top: 5px;
+  border-radius: 2px;
+  padding-left: 10px;
+  padding-top: 2px;
+}
+
+#notification .col-lg-3 a .not-opt:hover{
+  background-color: #dee0e1;
+}
